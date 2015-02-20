@@ -1,0 +1,50 @@
+<div class="spin">
+<h4 class="page-header" >{{model.pageHeader}}</h4>
+
+<div class="row">
+    <div class="col-sm-6">
+        <span class="pull-left">
+            <input type="text" placeholder="Filter" class="input-sm" ng-model="model.filterText">
+        </span>
+    </div>
+    <div class="col-sm-6">
+        <span class="pull-right">
+            <label for="sortby" >Sort by</label>
+            <select class="input-sm" name="sortby" id="sortby" ng-model="model.orderBy">
+                <option value="firstName">
+                    First name
+                </option>
+                <option value="lastName">
+                    Last name
+                </option>
+            </select>
+        </span>
+    </div>
+</div>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item list-striped click-style" ng-repeat = "contact in model.contacts| filter: model.filterText | orderBy:model.orderBy"  ng-click="viewContact(contact.id)">  
+        <div class="row">
+            <div class="col-sm-9">
+                <span class="pull-left contactname" id="text_{{contact.id}}" marked-for-deletion="model.markedForDeletion" >
+                    {{contact.firstName}} {{contact.lastName}}
+                </span>
+            </div>
+            <div class="col-sm-3">
+                <span class="pull-right">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <button class="btn btn-danger btn-sm" ng-show="model.editClicked" title="Delete contact" ng-click="deleteContact(contact); $event.stopPropagation()">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<button class="btn btn-success" ng-click="addContact()">Add a new contact</button>
+<togglebutton ng-click="clickEdit()" initialtext="Edit" toggletext="Done"></togglebutton>
+<button class="btn btn-warning" ng-click="cancel()" ng-show="model.showCancel" cancelAll>Cancel</button>
+<div class="text-important fadeOut">{{deleteSuccessMessage}}</div>
+</div>

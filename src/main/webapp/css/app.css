@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 8, 2015, 11:19:51 PM
+    Author     : sanjay
+*/
+
+.pull-right{
+    float:right;
+}
+.list-striped:nth-child(odd) {
+    background-color:#e5e5e5;
+}
+.list-striped{
+    padding-top:5px;
+}
+.list-striped:hover{
+    background-color: cornflowerblue;
+    color:white;
+    cursor:pointer
+}
+.markedForDeletion{
+    color:red;
+    text-decoration: line-through;
+
+}
+.fadeOut{
+    color:green;
+    font-weight: bold;
+}
+.contactform input.ng-invalid.ng-touched{
+    border-color: red;
+    background-color:#cc7f7f;
+}
+.errormsg{
+    color: #c10b0b;
+}
+.spin{
+    -webkit-animation: spin 0.2s linear 1;
+    -moz-animation: spin 0.2s linear 1;
+}
+
+@-webkit-keyframes spin{
+    
+    0%{
+        transform: translateX(100%)
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+@-moz-keyframes spin{
+    
+    0%{
+        transform: translateX(100%)
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}

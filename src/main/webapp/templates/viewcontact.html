@@ -1,0 +1,38 @@
+<div class="spin">
+<h4 class="page-header" >{{model.pageHeader}}</h4>
+
+<form role="form" name="contactForm" class="jumbotron contactform" novalidate ng-submit="saveContact(model.contactObj)" >
+    <div class="formGroup">
+        <label>First name</label><br/>
+        <input type="text" ng-model="model.contactObj.firstName" name="firstName" class="form-control" ng-model-options="{updateOn:'blur'}" required>
+
+    </div>
+
+    <div class="formGroup">
+        <label>Last name</label><br/>
+        <input type="text" ng-model="model.contactObj.lastName" ng-model-options = "{updateOn:'blur'}" class="form-control" name="lastName" required>
+    </div>
+
+    <div class="formGroup">
+        <label>Email</label><br/>
+        <input type="email" ng-model="model.contactObj.email" ng-model-options = "{updateOn:'blur'}" class="form-control" name="email" required > 
+    </div>
+
+    <div class="formGroup">
+        <label>Cell Phone</label><br/>
+        <input type="text" ng-model="model.contactObj.mobile" ng-model-options = "{updateOn:'blur'}" class="form-control" >
+    </div>
+    <div class="formGroup">
+        <label>Home Phone</label><br/>
+        <input type="text" ng-model="model.contactObj.homePhone" ng-model-options = "{updateOn:'blur'}" class="form-control">
+    </div><br/>
+
+    <input type="submit" class="btn btn-success" ng-disabled="contactForm.$invalid">
+    <button type="button" class="btn btn-warning" ng-click="reset()">Reset</button>
+    <button type="button" class="btn btn-primary" ng-click="goBack()">Back</button>
+    <div ng-show="contactForm.$invalid" class="errormsg">
+        <span>There are problems with your input. Please correct the fields in red</span>
+    </div>
+    <div class="text-important text-success" fade-in="model.fadeIn" >{{model.updateSuccessMessage}}</div>
+</form>
+</div>

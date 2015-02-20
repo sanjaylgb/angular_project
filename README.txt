@@ -1,3 +1,3 @@
 -Need Tomcat and Maven to run this project
 -Place tomcat home path in the build.sh script
-
+-Alternatively, i have included a working tomcat with the project. To see the app in action, you can just start it up by executing startup.sh script in the bin folder of tomcat
